@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twitterish</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== APP SHELL ===== -->
+<div class="app">
+
+  <!-- ===== LEFT SIDEBAR ===== -->
+  <aside class="sidebar-left">
+    <div class="sidebar-inner">
+      <!-- Logo -->
+      <a href="#" class="logo" aria-label="Home">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.26 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
+        </svg>
+      </a>
+
+      <!-- Nav -->
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#" class="nav-item active" data-view="home">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M21.591 7.146L12.52 1.157c-.316-.21-.724-.21-1.04 0l-9.071 5.99c-.26.173-.409.456-.409.757v13.183c0 .502.418.913.929.913H9.14c.511 0 .929-.411.929-.913v-7.075h3.909v7.075c0 .502.417.913.928.913h6.165c.511 0 .929-.411.929-.913V7.904c0-.301-.158-.584-.409-.758z"/></svg>
+          </span>
+          <span class="nav-label">Home</span>
+        </a>
+        <a href="#" class="nav-item" data-view="explore">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M21 7.353c0 4.062-8.48 14.51-9.938 16.18-.36.412-.87.467-1.126.467-.254 0-.765-.055-1.125-.467C7.41 21.863-.928 12.02-.928 7.353-.928 3.023 3.012-.928 7.35-.928c2.304 0 4.371.998 5.77 2.586C14.518.07 16.586-.928 18.89-.928c4.337 0 8.11 3.95 8.11 8.281z"/></svg>
+          </span>
+          <span class="nav-label">Explore</span>
+        </a>
+        <a href="#" class="nav-item" data-view="notifications" id="notif-link">
+          <span class="nav-icon badge-wrap">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M21.697 16.468c-.02-.016-2.021-1.578-2.021-6.468 0-3.825-2.504-7.003-6-7.823V1c0-.553-.447-1-1-1s-1 .447-1 1v1.177c-3.496.82-6 3.998-6 7.823 0 4.902-2.006 6.463-2.022 6.474-.295.221-.392.594-.242.938.15.344.498.566.864.566h16c.36 0 .701-.213.854-.547.158-.344.061-.727-.433-.963zM12 24c2.209 0 4-1.791 4-4H8c0 2.209 1.791 4 4 4z"/></svg>
+            <span class="badge" id="notif-badge">3</span>
+          </span>
+          <span class="nav-label">Notifications</span>
+        </a>
+        <a href="#" class="nav-item" data-view="messages">
+          <span class="nav-icon badge-wrap">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M19.25 3.018H4.75C3.233 3.018 2 4.252 2 5.77v12.495c0 1.518 1.233 2.753 2.75 2.753h14.5c1.517 0 2.75-1.235 2.75-2.753V5.77c0-1.518-1.233-2.752-2.75-2.752zm-14.5 1.5h14.5c.69 0 1.25.56 1.25 1.252l-8.07 5.109c-.404.254-.93.254-1.336-.002L4.5 5.77c0-.692.56-1.252 1.25-1.252zM19.25 19.017H4.75c-.69 0-1.25-.56-1.25-1.252V7.406l7.02 4.445c.412.26.885.39 1.36.39.47 0 .94-.127 1.35-.386L20.5 7.41v10.358c0 .69-.56 1.25-1.25 1.25z"/></svg>
+            <span class="badge">1</span>
+          </span>
+          <span class="nav-label">Messages</span>
+        </a>
+        <a href="#" class="nav-item" data-view="bookmarks">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M19 4.5H5c-.827 0-1.5.673-1.5 1.5v14.75c0 .414.336.75.75.75.138 0 .27-.038.385-.107L12 17.583l7.365 3.81A.75.75 0 0020.5 20.75V6c0-.827-.673-1.5-1.5-1.5z"/></svg>
+          </span>
+          <span class="nav-label">Bookmarks</span>
+        </a>
+        <a href="#" class="nav-item" data-view="profile">
+          <span class="nav-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12 11.816c1.355 0 2.872-.15 3.84-1.256.814-.93 1.078-2.368.806-4.392-.54-4.101-2.382-5.616-4.646-5.616-2.264 0-4.106 1.515-4.646 5.616-.272 2.024-.008 3.462.806 4.392.968 1.106 2.485 1.256 3.84 1.256zM20.307 17.408c-.963-2.14-2.868-3.677-5.024-4.227L12 20.854 8.717 13.18c-2.157.55-4.062 2.088-5.025 4.228-.656 1.46-.596 2.932-.596 2.942 0 1.035 5.748 3.146 8.904 3.146 3.156 0 8.904-2.111 8.904-3.146 0-.012.06-1.483-.597-2.942z"/></svg>
+          </span>
+          <span class="nav-label">Profile</span>
+        </a>
+      </nav>
+
+      <!-- Tweet button -->
+      <button class="btn-tweet" id="open-composer">Post</button>
+
+      <!-- User widget -->
+      <div class="user-widget" id="user-widget">
+        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Avatar" class="avatar avatar-md" />
+        <div class="user-widget-info">
+          <span class="display-name">Felix Doe</span>
+          <span class="username">@felixdoe</span>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+          <svg id="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+          <svg id="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="display:none"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN FEED ===== -->
+  <main class="feed">
+    <!-- Home view -->
+    <div class="view active" id="view-home">
+      <header class="feed-header">
+        <h2>Home</h2>
+        <div class="feed-tabs">
+          <button class="tab active" data-tab="for-you">For you</button>
+          <button class="tab" data-tab="following">Following</button>
+        </div>
+      </header>
+
+      <!-- Composer (inline) -->
+      <div class="composer" id="inline-composer">
+        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="You" class="avatar avatar-md" />
+        <div class="composer-body">
+          <textarea class="composer-input" id="inline-input" placeholder="What's happening?" rows="1"></textarea>
+          <div class="composer-toolbar">
+            <div class="composer-icons">
+              <button class="icon-btn" title="Media" onclick="triggerImageUpload()">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.75 2H4.25C3.01 2 2 3.01 2 4.25v15.5C2 20.99 3.01 22 4.25 22h15.5c1.24 0 2.25-1.01 2.25-2.25V4.25C22 3.01 20.99 2 19.75 2zM4.25 3.5h15.5c.413 0 .75.337.75.75v9.676l-3.858-3.858c-.14-.14-.33-.22-.53-.22h-.003c-.2 0-.393.08-.532.224l-4.317 4.384-1.813-1.806c-.14-.14-.33-.22-.53-.22-.193-.03-.395.08-.535.227L3.5 17.642V4.25c0-.413.337-.75.75-.75zm-.744 16.28l5.418-5.534 6.282 6.254H4.25c-.402 0-.727-.322-.744-.72zm16.244.72h-2.42l-5.007-4.987 3.792-3.85 4.385 4.384v3.703c0 .413-.337.75-.75.75z"/><circle cx="8.868" cy="8.309" r="1.542"/></svg>
+              </button>
+              <button class="icon-btn" title="Emoji">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.1 9.25-9.25S17.1 2.75 12 2.75z"/><path d="M12 17.115c-1.892 0-3.598-.992-4.583-2.655-.224-.381-.097-.87.283-1.095.382-.224.871-.097 1.095.283.714 1.212 1.932 1.967 3.205 1.967s2.491-.755 3.205-1.967c.224-.38.714-.507 1.095-.283.38.224.507.714.283 1.095-1.001 1.663-2.706 2.655-4.583 2.655zM9.5 11c-.829 0-1.5-.671-1.5-1.5S8.671 8 9.5 8 11 8.671 11 9.5 10.329 11 9.5 11zm5 0c-.829 0-1.5-.671-1.5-1.5S13.671 8 14.5 8 16 8.671 16 9.5 15.329 11 14.5 11z"/></svg>
+              </button>
+              <input type="file" id="image-upload" accept="image/*" style="display:none" onchange="handleImageUpload(event)" />
+            </div>
+            <button class="btn-post" id="inline-post-btn" disabled>Post</button>
+          </div>
+          <div id="image-preview-wrap" class="image-preview-wrap" style="display:none">
+            <img id="image-preview" src="" alt="Preview" class="preview-img" />
+            <button class="remove-image" onclick="removeImage()">✕</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tweet feed -->
+      <div class="tweet-list" id="tweet-list"></div>
+    </div>
+
+    <!-- Explore view -->
+    <div class="view" id="view-explore">
+      <header class="feed-header">
+        <h2>Explore</h2>
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5S3.5 15.135 3.5 11z"/></svg>
+          <input type="text" placeholder="Search Twitterish" id="search-input" class="search-input" oninput="handleSearch(this.value)" />
+        </div>
+      </header>
+      <div class="trending-explore" id="trending-explore"></div>
+    </div>
+
+    <!-- Notifications view -->
+    <div class="view" id="view-notifications">
+      <header class="feed-header"><h2>Notifications</h2></header>
+      <div class="notif-list" id="notif-list"></div>
+    </div>
+
+    <!-- Messages view -->
+    <div class="view" id="view-messages">
+      <header class="feed-header"><h2>Messages</h2></header>
+      <div class="messages-list" id="messages-list"></div>
+    </div>
+
+    <!-- Bookmarks view -->
+    <div class="view" id="view-bookmarks">
+      <header class="feed-header"><h2>Bookmarks</h2></header>
+      <div class="tweet-list" id="bookmark-list"></div>
+    </div>
+
+    <!-- Profile view -->
+    <div class="view" id="view-profile">
+      <header class="feed-header"><h2>Profile</h2></header>
+      <div class="profile-page" id="profile-page"></div>
+    </div>
+  </main>
+
+  <!-- ===== RIGHT SIDEBAR ===== -->
+  <aside class="sidebar-right">
+    <!-- Search bar (desktop) -->
+    <div class="search-wrap desktop-only">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5S3.5 15.135 3.5 11z"/></svg>
+      <input type="text" placeholder="Search Twitterish" class="search-input" />
+    </div>
+
+    <!-- Trending widget -->
+    <div class="widget" id="trending-widget">
+      <h3 class="widget-title">Trends for you</h3>
+      <div id="trending-list"></div>
+    </div>
+
+    <!-- Who to follow -->
+    <div class="widget" id="follow-widget">
+      <h3 class="widget-title">Who to follow</h3>
+      <div id="follow-list"></div>
+    </div>
+
+    <footer class="sidebar-footer">
+      <a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Cookies</a>
+      <p>© 2025 Twitterish</p>
+    </footer>
+  </aside>
+</div>
+
+<!-- ===== COMPOSE MODAL ===== -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div class="composer modal-composer">
+      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="You" class="avatar avatar-md" />
+      <div class="composer-body">
+        <textarea class="composer-input" id="modal-input" placeholder="What's happening?" rows="3"></textarea>
+        <div id="modal-image-preview-wrap" class="image-preview-wrap" style="display:none">
+          <img id="modal-image-preview" src="" alt="Preview" class="preview-img" />
+          <button class="remove-image" onclick="removeModalImage()">✕</button>
+        </div>
+        <div class="composer-toolbar">
+          <div class="composer-icons">
+            <button class="icon-btn" title="Media" onclick="triggerModalImageUpload()">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.75 2H4.25C3.01 2 2 3.01 2 4.25v15.5C2 20.99 3.01 22 4.25 22h15.5c1.24 0 2.25-1.01 2.25-2.25V4.25C22 3.01 20.99 2 19.75 2zM4.25 3.5h15.5c.413 0 .75.337.75.75v9.676l-3.858-3.858c-.14-.14-.33-.22-.53-.22h-.003c-.2 0-.393.08-.532.224l-4.317 4.384-1.813-1.806c-.14-.14-.33-.22-.53-.22-.193-.03-.395.08-.535.227L3.5 17.642V4.25c0-.413.337-.75.75-.75zm-.744 16.28l5.418-5.534 6.282 6.254H4.25c-.402 0-.727-.322-.744-.72zm16.244.72h-2.42l-5.007-4.987 3.792-3.85 4.385 4.384v3.703c0 .413-.337.75-.75.75z"/><circle cx="8.868" cy="8.309" r="1.542"/></svg>
+            </button>
+            <input type="file" id="modal-image-upload" accept="image/*" style="display:none" onchange="handleModalImageUpload(event)" />
+            <button class="icon-btn" title="Emoji">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.1 9.25-9.25S17.1 2.75 12 2.75z"/><path d="M12 17.115c-1.892 0-3.598-.992-4.583-2.655-.224-.381-.097-.87.283-1.095.382-.224.871-.097 1.095.283.714 1.212 1.932 1.967 3.205 1.967s2.491-.755 3.205-1.967c.224-.38.714-.507 1.095-.283.38.224.507.714.283 1.095-1.001 1.663-2.706 2.655-4.583 2.655zM9.5 11c-.829 0-1.5-.671-1.5-1.5S8.671 8 9.5 8 11 8.671 11 9.5 10.329 11 9.5 11zm5 0c-.829 0-1.5-.671-1.5-1.5S13.671 8 14.5 8 16 8.671 16 9.5 15.329 11 14.5 11z"/></svg>
+            </button>
+          </div>
+          <button class="btn-post" id="modal-post-btn" disabled>Post</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TWEET DETAIL MODAL ===== -->
+<div class="modal-overlay" id="tweet-detail-overlay">
+  <div class="modal tweet-detail-modal">
+    <button class="modal-close" onclick="closeTweetDetail()">✕</button>
+    <div id="tweet-detail-content"></div>
+    <div class="reply-composer">
+      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="You" class="avatar avatar-md" />
+      <div class="composer-body">
+        <textarea class="composer-input" id="reply-input" placeholder="Post your reply" rows="2"></textarea>
+        <div class="composer-toolbar">
+          <div></div>
+          <button class="btn-post" id="reply-post-btn" disabled>Reply</button>
+        </div>
+      </div>
+    </div>
+    <div class="replies-list" id="replies-list"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
